@@ -14,7 +14,7 @@ if len(input_char) != 1:
     print("Error: Character must be a single character.")
     exit()
 
-print("Searching for e in hello")
+print("Searching for " + input_char + " in " + input_word)
 char_count: int = 0
 
 if input_word[0] == input_char:
