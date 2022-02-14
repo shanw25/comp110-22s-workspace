@@ -29,7 +29,7 @@
 7 Break up complex functions
     No specific function is written in the main method
 8 Try something fun!
-    8.0 I wrote the script using ontime(): 201 - 217
+    8.0 I wrote the script using ontimer(): 201 - 217
     8.1 The shining stars appear randomly in the sky using randint(): 65
     8.2 Things drawn are cleaned using clear(): 66, 148
     8.3 I think the story is interesting
@@ -142,39 +142,39 @@ def main() -> None:
     bridge: Turtle = Turtle()  # the bridge the stand on
     head: Turtle = Turtle()  # their head & the moon
     body: Turtle = Turtle()  # their body
-    # NOTE: The ontime() function needs the first param to be a funciton with no arguments, therefore, the following functions are created.
+    # NOTE: The ontimer() function needs the first param to be a funciton with no arguments, therefore, the following functions are created.
 
-    def clear_sub():  # a function to clear the subtitle. Because the ontimer function need a static function with no arguments as one of it's param, these function is created.
+    def clear_sub() -> None:  # a function to clear the subtitle. Because the ontimer function need a static function with no arguments as one of it's param, these function is created.
         subtitle.clear()
 
-    def clear_body_and_head():  # clear the character on the screen
+    def clear_body_and_head() -> None:  # clear the character on the screen
         body.clear()
         head.clear()
 
-    def sub_2():  # 2ed subtitle
+    def sub_2() -> None:  # 2ed subtitle
         create_subtitle(subtitle, -100, 320, "It's a shining night")
     
-    def sub_3():  # 3rd subtitle
+    def sub_3() -> None:  # 3rd subtitle
         create_subtitle(subtitle, -400, 320, "Mr. Python and a Mrs. Turtle was in love and they could only \nmeet each other once per year on this broken bridge")
 
-    def sub_4():  # 4th subtitle
+    def sub_4() -> None:  # 4th subtitle
         create_subtitle(subtitle, -400, 320, "The birds in the sky was moved by their love. \nThey fixed the bridge using thier body.")
 
-    def sub_5():  # 5 subtitle
+    def sub_5() -> None:  # 5 subtitle
         create_subtitle(subtitle, -400, 320, "Mr. Python and Mrs. Turtle finally could hug each other!")
 
-    def sub_6():  # 6 subtitle
+    def sub_6() -> None:  # 6 subtitle
         create_subtitle(subtitle, -400, 200, "Happy Valentine's day!!!")
 
-    def shin():  # shin the light
+    def shin() -> None:  # shin the light
         shin_star(star_one)
         shin_star(star_two)
     
-    def draw_bridge():  # draw the bridge
+    def draw_bridge() -> None:  # draw the bridge
         draw_half_bridge_or_birds(bridge, -180, -160, "left", True)
         draw_half_bridge_or_birds(bridge, 172, -160, "right", True)
 
-    def draw_people_and_moon():  # characters and the moon
+    def draw_people_and_moon() -> None:  # characters and the moon
         draw_head_or_moon_circle(head, 172, -60, False, "white")
         draw_head_or_moon_circle(head, -180, -60, False, "white")
         draw_head_or_moon_circle(head, 300, 200, True, "yellow")
@@ -183,7 +183,7 @@ def main() -> None:
         draw_body_line(body, 170, -60, 50, 250)
         draw_body_line(body, -180, -60, 50, 290)
 
-    def draw_people_hug():  # draw two chars hugging
+    def draw_people_hug() -> None:  # draw two chars hugging
         draw_head_or_moon_circle(head, 50, -60, True, "white")
         draw_head_or_moon_circle(head, -50, -60, True, "white")
         draw_head_or_moon_circle(head, 300, 200, True, "yellow")
@@ -192,12 +192,12 @@ def main() -> None:
         draw_body_line(body, 50, -60, 50, 250)
         draw_body_line(body, -50, -60, 50, 290)
 
-    def draw_birds():  # draw the birds
+    def draw_birds() -> None:  # draw the birds
         draw_half_bridge_or_birds(bridge, -92, -248, "left", False)
         draw_half_bridge_or_birds(bridge, -92, -248, "right", False)
         draw_half_bridge_or_birds(bridge, 84, -248, "left", False)
         draw_half_bridge_or_birds(bridge, 84, -248, "right", False)
-    # The first subtitle introducing the background of the story, it starts at 0 second thus it doesn't need ontime() function to call.
+    # The first subtitle introducing the background of the story, it starts at 0 second thus it doesn't need ontimer() function to call.
     create_subtitle(subtitle, -380, 320, "The following story is a transformation to \none of the Ancient Chinese Valentine Allegory")
     ontimer(clear_sub, 2500)
     ontimer(sub_2, 2500)
