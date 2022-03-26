@@ -70,8 +70,12 @@ def select(given_table: dict[str, list[str]], columns: list[str]) -> dict[str, l
 def concat(first_table: dict[str, list[str]], second_table: dict[str, list[str]]) -> dict[str, list[str]]:
     """Concat two column-based table."""
     return_dict: dict[str, list[str]] = {}
+    current_list: list[str] = []
     for key in first_table:  # put everything in the first table to a new dict
-        return_dict[key] = first_table[key]
+        for value in first_table[key]:
+            current_list.append(value)
+        return_dict[key] = current_list
+        current_list = []
     for key in second_table:
         if key in return_dict:  # if the current key is in the return_table
             return_dict[key] += second_table[key]  # add the list to that dict according to its value
